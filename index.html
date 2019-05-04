@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Random </title>
+</head>
+<body align="center" >
+
+<h2>random number generator</h2>
+
+<p>how many random number do you need</p>
+
+<input id="t">
+
+<p>enter ending number of range</p>
+
+<input id="e">
+<br>
+<br>
+<button type="button" onclick="myFunction()">Generate</button>
+<hr>
+<p style="strong" id="show"></p>
+<hr>
+<p> Copyright © 2019 <a href="https://twitter.com/Parsa2820">parsa2820</a></p>
+<script>
+function myFunction() {
+  var x,i,e,o=[],r;
+  x = document.getElementById("t").value;
+  e = document.getElementById("e").value;
+  for (i = 0; i < x; i++) { 
+    r = Math.floor(Math.random() * e) + 1;
+    o.push(r);
+  }
+o.sort(function(a, b){return a-b});
+var j,so="";
+for (j=0; j<x;j++ ){
+	so += o[j];
+	so += "<form><input type=radio name=x> 1<input type=radio name=x> 2<input type=radio name=x> 3<input type=radio name=x> 4</form>";
+	so+= "<br>";
+}
+document.getElementById("show").innerHTML =  so;
+}
+</script>
+
+</body>
+</html>
