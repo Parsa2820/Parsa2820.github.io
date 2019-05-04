@@ -9,11 +9,11 @@
 
 <p>how many random number do you need</p>
 
-<input id="t">
+<input id="t" value="20">
 
 <p>enter ending number of range</p>
 
-<input id="e">
+<input id="e" value="1000">
 <br>
 <br>
 <button type="button" onclick="myFunction()">Generate</button>
@@ -33,8 +33,12 @@ function myFunction() {
 o.sort(function(a, b){return a-b});
 var j,so="";
 for (j=0; j<x;j++ ){
-	so += o[j];
-	so += "<form><input type=radio name=x> 1<input type=radio name=x> 2<input type=radio name=x> 3<input type=radio name=x> 4</form>";
+	so += "<input type=checkbox>"
+	so += "(";
+	so += j+1;
+	so += ")";
+	so += o[j]; 
+	so += "<form>1<input type=radio name=x>2<input type=radio name=x>3<input type=radio name=x>4<input type=radio name=x></form>";
 	so+= "<br>";
 }
 document.getElementById("show").innerHTML =  so;
